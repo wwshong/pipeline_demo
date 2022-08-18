@@ -16,6 +16,8 @@ pipeline {
                     def s2 = jenkinsSharedLibUtil.sayHi2()
                     println "s1=${s1}"
                     println "s2=${s2}"
+					
+					mvn (this, 'clean package')
                 }
                 //global variables function   
 
@@ -30,7 +32,7 @@ pipeline {
                 //3. then run hello-world.sh on the Agent
                 helloWorldExternal("name": "Tom", "dayOfWeek": "Wed")
 				
-				mvn (this, 'clean package')
+				
             }
         }
 		
