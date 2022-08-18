@@ -30,7 +30,7 @@ pipeline {
                 //3. then run hello-world.sh on the Agent
                 helloWorldExternal("name": "Tom", "dayOfWeek": "Wed")
 				
-				mvn this, 'clean package'
+				mvn (this, 'clean package')
             }
         }
 		
