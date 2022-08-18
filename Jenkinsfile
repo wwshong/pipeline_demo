@@ -2,7 +2,7 @@
 // Declarative Pipeline
 @Library('shared-lib') 
 import jenkinslib.JenkinsSharedLibUtil
-import static util.Utilities.*
+//import static util.Utilities.*
 import util.*
 def jenkinsSharedLibUtil = new JenkinsSharedLibUtil()
 def utils2 = new Utilities2(this)
@@ -19,7 +19,7 @@ pipeline {
                     println "s1=${s1}"
                     println "s2=${s2}"
 					
-					mvn (this, 'clean package')
+					//mvn (this, 'clean package')
 					
 					utils2.mvn 'clean package 2'
                 }
