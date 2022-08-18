@@ -2,6 +2,7 @@
 // Declarative Pipeline
 @Library('shared-lib') 
 import jenkinslib.JenkinsSharedLibUtil
+import static util.Utilities.*
 def jenkinsSharedLibUtil = new JenkinsSharedLibUtil()
 pipeline {
 	agent any
@@ -28,6 +29,8 @@ pipeline {
                 //2. helloWorldExternal.groovy calls loadLinuxScript(name: 'hello-world.sh') to read hello-world.sh and save it
                 //3. then run hello-world.sh on the Agent
                 helloWorldExternal("name": "Tom", "dayOfWeek": "Wed")
+				
+				mvn this, 'clean package'
             }
         }
 		
