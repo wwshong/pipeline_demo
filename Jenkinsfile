@@ -3,7 +3,9 @@
 @Library('shared-lib') 
 import jenkinslib.JenkinsSharedLibUtil
 import static util.Utilities.*
+import util.*
 def jenkinsSharedLibUtil = new JenkinsSharedLibUtil()
+def utils = new Utilities(this)
 pipeline {
 	agent any
 
@@ -18,6 +20,8 @@ pipeline {
                     println "s2=${s2}"
 					
 					mvn (this, 'clean package')
+					
+					utils.mvn 'clean package 2'
                 }
                 //global variables function   
 
