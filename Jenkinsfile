@@ -12,6 +12,8 @@ pipeline {
 	stages {
 		stage("shared lib demo") {
             steps {
+			
+			
                 //since jenkinsSharedLibUtil is Java/Groovy class, so they're inside script tag
                 script {
                     def s1 = jenkinsSharedLibUtil.sayHi()
@@ -37,6 +39,9 @@ pipeline {
                 helloWorldExternal("name": "Tom", "dayOfWeek": "Wed")
 				
 				
+				//////// calculator is a good example of organizing pipeline code
+				int sum = calculator.add(1,2)
+				echo "The sum is ${sum}"
             }
         }
 		
