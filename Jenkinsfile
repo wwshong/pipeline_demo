@@ -40,8 +40,11 @@ pipeline {
 				
 				
 				//////// calculator is a good example of organizing pipeline code
-				int sum = calculator.add(1,2)
-				echo "The sum is ${sum}"
+				
+				script{
+					int sum = calculator.add(1,2)
+					echo "The sum is ${sum}"
+				}
             }
         }
 		
